@@ -3,8 +3,18 @@ name: Repo Checks
 on: ["push", "pull_request"]
 
 jobs:
+  check_pinact:
+    name: All github actions are pinned
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+    - uses: suzuki-shunsuke/pinact-action@49cbd6acd0dbab6a6be2585d1dbdaa43b4410133 # v1.0.0
+      with:
+        skip_push: "true"
+    - run: pinact run --check
+  
   check_python_quality:
-    name: Code Quality
+    name: Python Quality Checks
     runs-on: ubuntu-latest
 
     steps:
