@@ -12,11 +12,11 @@ jobs:
     environment: prod
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
       - name: Setup Build Environment
         uses: ./.github/actions/setup-repo
       - name: Build and Deploy to Firebase
-        uses: w9jds/firebase-action@v13.18.0
+        uses: w9jds/firebase-action@5bb36bbfc9a346fd7e8826b7209f2d201f085af0 # v13.18.0
         with:
           args: deploy --force --only firestore,functions:maple,storage
         env:
