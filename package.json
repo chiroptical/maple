@@ -72,6 +72,8 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@emotion/weak-memoize": "^0.3.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -130,7 +132,8 @@
     "redux-thunk": "^3.1.0",
     "runtypes": "6.5.1",
     "sidebar-v2": "^0.4.0",
-    "styled-components": "^5.3.3",
+    "styled-components": "^6.0.0",
+    "stylis": "^4.0.0",
     "typesense": "^1.2.2",
     "typesense-instantsearch-adapter": "^2.4.0",
     "usehooks-ts": "^2.5.3",
@@ -165,7 +168,6 @@
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "^18.2.17",
     "@types/redux-mock-store": "^1.0.6",
-    "@types/styled-components": "^5.1.21",
     "all-contributors-cli": "^6.20.5",
     "axios": "^0.27.2",
     "babel-loader": "^9.1.3",
