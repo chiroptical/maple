@@ -2,7 +2,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components"
 import { isComplete, isCurrent, Step } from "./redux"
-import { chipHeight, StepChip } from "./StepChip"
+import { chipHeight, StyledStepChip } from "./StepChip"
 import { useTranslation } from "next-i18next"
 
 const Divider = styled.div`
@@ -51,9 +51,12 @@ const StepBox: React.FC<
 > = ({ step, current, complete, children }) => {
   return (
     <div>
-      <StepChip className="m-auto mb-2" active={current || complete}>
+      <StyledStepChip
+          className="m-auto mb-2"
+          $active={current || complete || false}
+          $scale={1}>
         {complete ? <FontAwesomeIcon icon={faCheck} /> : step}
-      </StepChip>
+      </StyledStepChip>
       {children}
     </div>
   )

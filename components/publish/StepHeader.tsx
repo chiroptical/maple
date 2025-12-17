@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { StepChip } from "./StepChip"
+import { StyledStepChip } from "./StepChip"
 import { Row, Col } from "../bootstrap"
 import { useMediaQuery } from "usehooks-ts"
 
@@ -13,9 +13,9 @@ export const StepHeader = styled<{ step?: number }>(({ step, children }) => {
       >
         <div className="m-auto">
           {!!step && (
-            <StepChip scale={2} active={true} className="me-4">
+            <StyledStepChip className="me-4" $scale={2} $active={true} >
               {step}
-            </StepChip>
+            </StyledStepChip>
           )}
         </div>
       </Col>

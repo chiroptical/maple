@@ -55,11 +55,12 @@ export const LoadingButton = ({
   )
 }
 
-export const ImageButton = styled<
+type ImageButtonProps =
   Pick<ImageProps, "alt" | "src"> & { tooltip?: string; href?: string }
->(({ alt, tooltip, href, ...rest }) => {
+
+export const ImageButton = ({href, alt, tooltip}: ImageButtonProps) => {
   const link = !!href
-  const img = <Image alt={alt} tabIndex={0} role="button" {...rest} />
+  const img = <Image alt={alt} tabIndex={0} role="button" />
   const content = link ? <Internal href={href}>{img}</Internal> : img
   return tooltip ? (
     <OverlayTrigger
@@ -72,7 +73,9 @@ export const ImageButton = styled<
   ) : (
     content
   )
-})`
+}
+
+export const StyledImageButton = styled(ImageButton)`
   cursor: pointer;
 
   transition: filter 0.15s ease-in-out, outline-width 0.1s ease-in-out;
@@ -265,23 +268,24 @@ export const CustomDropdownButton = React.forwardRef<
 
 CustomDropdownButton.displayName = "CustomDropdownButton"
 
-export const TooltipButton = styled<{
+// TODO: do we need props.rest here?
+export const TooltipButton = (props: {
   tooltip: string
   text: string
-  variant?: string
-}>(({ tooltip, text, variant, ...rest }) => {
-  return (
+  variant?: string  
+}) => (
     <OverlayTrigger
       delay={500}
       placement="right"
-      overlay={<Tooltip>{tooltip}</Tooltip>}
+      overlay={<Tooltip>{props.tooltip}</Tooltip>}
     >
-      <Button variant={variant} {...rest}>
-        {text}
+      <Button variant={props.variant}>
+        {props.text}
       </Button>
     </OverlayTrigger>
-  )
-})`
+)
+
+export const StyledTooltipButton = styled(TooltipButton)`
   font-size: 14px;
 
   transition: filter 0.15s ease-in-out, outline-width 0.1s ease-in-out;
