@@ -5,9 +5,7 @@ import { Col, Button, Nav, NavDropdown, Row } from "../bootstrap"
 import { FC, PropsWithChildren, ReactNode } from "react"
 import { ProfileIcon } from "components/ProfilePage/StyledUserIcons"
 
-export const StyledTabNav = styled(Nav).attrs(props => ({
-  className: props.className
-}))`
+export const StyledTabNav = styled(Nav)`
   display: flex;
 
   height: 2.5em;

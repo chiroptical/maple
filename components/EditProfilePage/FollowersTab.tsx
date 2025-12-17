@@ -84,6 +84,7 @@ const FollowerCard = ({ profileId }: { profileId: string }) => {
     <FollowerCardWrapper>
       <Col className="d-flex align-items-center flex-grow-1 p-0 text-start">
         <OrgIconSmall
+          large={false}
           className="mr-4 mt-0 mb-0 ms-0"
           profileImage={profileImage}
         />

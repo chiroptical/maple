@@ -50,7 +50,7 @@ export const ProfileHeader = ({
       >
         <ProfileIcon role={role} large />
         <div className={`d-grid col-6 col-md-10 gap-2`}>
-          <ProfileDisplayName>{profile.fullName}</ProfileDisplayName>
+          <ProfileDisplayName large={false}>{profile.fullName}</ProfileDisplayName>
           {user && isUser ? ( // Am I Logged In? and Is This My Profile?
             <EditProfileButton
               className={`py-1 col-md-8`}
